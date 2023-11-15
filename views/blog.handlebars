@@ -3,3 +3,20 @@
   <p>Written by {{user.name}} on {{format_date date_created}}</p>
     <p>{{blog_article}}</p>
 </div>
+{{#if blogs.length}}
+<div class="col-md-6 project-list">
+  <h3>Comments:</h3>
+
+  {{#each blogs as |blog|}}
+  <div class="row mb-2">
+    <div class="col-md-8">
+      <h4>{{blog.comment}}</h4>
+    </div>
+  {{/each}}
+  </div>
+{{/if}}
+
+<div class="text-center">
+  <label for="comment">Comments:</label>
+  <textarea class="form-input" id="comment" name="comment-desc"></textarea>
+</div>
